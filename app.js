@@ -41,7 +41,7 @@ const addTask = function () {
   const taskListItemElement = createTaskElement(taskInputElement.value);
 
   incompleteTasksListElement.appendChild(taskListItemElement);
-  bindTaskEvents(taskListItemElement, toggleTaskCompletion);
+  bindTaskEvents(taskListItemElement);
 
   taskInputElement.value = '';
 };
@@ -86,7 +86,7 @@ const toggleTaskCompletion = function () {
 
 addButtonElement.addEventListener('click', addTask);
 
-const bindTaskEvents = function (taskListItemElement, checkboxEventHandler) {
+const bindTaskEvents = function (taskListItemElement) {
   const taskCheckboxElement = taskListItemElement.querySelector(
     'input[type=checkbox]',
   );
@@ -97,13 +97,13 @@ const bindTaskEvents = function (taskListItemElement, checkboxEventHandler) {
 
   taskEditButtonElement.addEventListener('click', editTask);
   taskDeleteButtonElement.addEventListener('click', deleteTask);
-  taskCheckboxElement.addEventListener('change', checkboxEventHandler);
+  taskCheckboxElement.addEventListener('change', toggleTaskCompletion);
 };
 
 const taskLists = [incompleteTasksListElement, completedTasksListElement];
 
 taskLists.forEach((taskListElement) => {
   Array.from(taskListElement.children).forEach((taskListItemElement) => {
-    bindTaskEvents(taskListItemElement, toggleTaskCompletion);
+    bindTaskEvents(taskListItemElement);
   });
 });
