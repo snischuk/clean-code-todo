@@ -36,9 +36,11 @@ const createTaskElement = function (taskDescription) {
 };
 
 const addTask = function () {
-  if (!taskInputElement.value) return;
+  const taskDescription = taskInputElement.value.trim();
 
-  const taskListItemElement = createTaskElement(taskInputElement.value);
+  if (!taskDescription) return;
+
+  const taskListItemElement = createTaskElement(taskDescription);
 
   incompleteTasksListElement.appendChild(taskListItemElement);
   bindTaskEvents(taskListItemElement);
