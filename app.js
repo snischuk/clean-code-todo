@@ -29,6 +29,7 @@ const createTaskElement = function (taskDescription) {
   taskDeleteButtonElement.className = 'task-button task-button-delete';
   taskDeleteButtonImageElement.className = 'task-button-delete-img';
   taskDeleteButtonImageElement.src = './remove.svg';
+  taskDeleteButtonImageElement.alt = 'Delete task icon';
 
   taskDeleteButtonElement.appendChild(taskDeleteButtonImageElement);
 
