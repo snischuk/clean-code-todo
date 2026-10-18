@@ -12,22 +12,22 @@ const createTaskElement = function (taskDescription) {
   const taskDeleteButtonElement = document.createElement('button');
   const taskDeleteButtonImageElement = document.createElement('img');
 
-  taskListItemElement.className = 'task-item';
+  taskListItemElement.className = 'todo__item';
 
   taskCheckboxElement.type = 'checkbox';
-  taskCheckboxElement.className = 'task-checkbox';
+  taskCheckboxElement.className = 'todo__checkbox';
 
   taskLabelElement.textContent = taskDescription;
-  taskLabelElement.className = 'task-label';
+  taskLabelElement.className = 'todo__label';
 
   taskEditInputElement.type = 'text';
-  taskEditInputElement.className = 'task-input';
+  taskEditInputElement.className = 'todo__input';
 
   taskEditButtonElement.textContent = 'Edit';
-  taskEditButtonElement.className = 'task-button task-button-edit';
+  taskEditButtonElement.className = 'todo__button todo__button-edit';
 
-  taskDeleteButtonElement.className = 'task-button task-button-delete';
-  taskDeleteButtonImageElement.className = 'task-button-delete-img';
+  taskDeleteButtonElement.className = 'todo__button todo__button-delete';
+  taskDeleteButtonImageElement.className = 'todo__button-delete-img';
   taskDeleteButtonImageElement.src = './remove.svg';
   taskDeleteButtonImageElement.alt = 'Delete task icon';
 
@@ -57,12 +57,13 @@ const addTask = function () {
 
 const editTask = function () {
   const taskListItemElement = this.parentNode;
-  const taskEditInputElement = taskListItemElement.querySelector('.task-input');
-  const taskLabelElement = taskListItemElement.querySelector('.task-label');
+  const taskEditInputElement =
+    taskListItemElement.querySelector('.todo__input');
+  const taskLabelElement = taskListItemElement.querySelector('.todo__label');
   const taskEditButtonElement =
-    taskListItemElement.querySelector('.task-button-edit');
+    taskListItemElement.querySelector('.todo__button-edit');
   const isEditMode = taskListItemElement.classList.contains(
-    'task-item-edit-mode',
+    'todo__item--edit-mode',
   );
 
   if (isEditMode) {
@@ -77,7 +78,7 @@ const editTask = function () {
     taskEditButtonElement.textContent = 'Save';
   }
 
-  taskListItemElement.classList.toggle('task-item-edit-mode');
+  taskListItemElement.classList.toggle('todo__item--edit-mode');
 };
 
 const deleteTask = function () {
@@ -94,16 +95,21 @@ const toggleTaskCompletion = function () {
     ? completedTasksListElement
     : incompleteTasksListElement;
 
+  taskListItemElement.classList.toggle(
+    'todo__item--completed',
+    isTaskIncomplete,
+  );
+
   targetListElement.appendChild(taskListItemElement);
 };
 
 const bindTaskEvents = function (taskListItemElement) {
   const taskCheckboxElement =
-    taskListItemElement.querySelector('.task-checkbox');
+    taskListItemElement.querySelector('.todo__checkbox');
   const taskEditButtonElement =
-    taskListItemElement.querySelector('.task-button-edit');
+    taskListItemElement.querySelector('.todo__button-edit');
   const taskDeleteButtonElement = taskListItemElement.querySelector(
-    '.task-button-delete',
+    '.todo__button-delete',
   );
 
   taskEditButtonElement.addEventListener('click', editTask);

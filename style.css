@@ -4,61 +4,61 @@
   font-family: Lato, sans-serif;
 }
 
-.image-wrapper {
+.header {
   width: 500px;
   margin: 0 auto;
   display: block;
   text-align: right;
 }
 
-.image-eisenhower-matrix {
+.header__image {
   width: 100%;
 }
 
-.link-more-info {
+.header__link {
   font-family: fantasy, cursive;
 }
 
 @media (max-width: 768px) {
-  .image-wrapper {
+  .header {
     text-align: center;
   }
 }
 
-.main {
+.todo {
   display: block;
   width: 500px;
-  margin: 0 auto 0;
+  margin: 0 auto;
 }
 
-.task-label,
-.task-input {
+.todo__label,
+.todo__input {
   width: 56%;
   display: inline-block;
   flex-grow: 1;
 }
 
-.task-new-wrapper {
+.todo__new-wrapper {
   display: flex;
 }
 
-.tasks-list {
+.todo__list {
   margin: 0;
-  padding: 0px;
+  padding: 0;
 }
 
-.task-item {
+.todo__item {
   list-style: none;
 }
 
-.task-input,
-.task-button {
+.todo__input,
+.todo__button {
   outline: none;
 }
 
-.task-button {
+.todo__button {
   background: none;
-  border: 0px;
+  border: 0;
   color: #888;
   font-size: 15px;
   width: 60px;
@@ -66,11 +66,11 @@
   cursor: pointer;
 }
 
-.task-button:hover {
+.todo__button:hover {
   color: #3a3a3a;
 }
 
-.task-title {
+.todo__title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -80,7 +80,7 @@
   text-transform: uppercase;
 }
 
-.task-input {
+.todo__input {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -93,72 +93,71 @@
   color: #888;
 }
 
-.task-input:focus {
+.todo__input:focus {
   color: #333;
 }
 
-.task-title-new {
+.todo__title--new {
   display: block;
   margin: 0 0 20px;
 }
 
-.task-input-new {
+.todo__input--new {
   width: 318px;
 }
 
-.task-item {
+.todo__item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.task-item > * {
+.todo__item > * {
   vertical-align: middle;
 }
 
-.task-checkbox {
+.todo__checkbox {
   margin: 0 10px;
 }
 
-.task-label {
+.todo__label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-.task-item .task-input {
+.todo__item .todo__input {
   width: 226px;
 }
 
-.task-button-delete-img {
+.todo__button-delete-img {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.task-button-delete-img:hover {
+.todo__button-delete-img:hover {
   transform: rotateZ(0);
 }
 
-#completed-tasks .task-label  {
+.todo__item--completed .todo__label {
   text-decoration: line-through;
   color: #888;
 }
 
-.task-item .task-input {
+.todo__item .todo__input {
   display: none;
 }
 
-.task-item-edit-mode .task-input {
+.todo__item--edit-mode .todo__input {
   display: inline-block;
   width: 224px;
 }
 
-.task-item-edit-mode .task-label {
+.todo__item--edit-mode .todo__label {
   display: none;
 }
