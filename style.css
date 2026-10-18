@@ -7,7 +7,6 @@
 .header {
   width: 500px;
   margin: 0 auto;
-  display: block;
   text-align: right;
 }
 
@@ -41,7 +40,6 @@
 }
 
 .todo {
-  display: block;
   width: 500px;
   margin: 0 auto;
 }
@@ -53,8 +51,6 @@
 
 .todo__label,
 .todo__input {
-  width: 56%;
-  display: inline-block;
   flex-grow: 1;
 }
 
@@ -118,14 +114,6 @@
   color: #333;
 }
 
-.todo__title--new {
-  display: block;
-}
-
-.todo__input--new {
-  width: 318px;
-}
-
 .todo__item {
   overflow: hidden;
   padding: 20px 0;
@@ -150,10 +138,6 @@
   width: 226px;
 }
 
-.todo__item .todo__input {
-  width: 226px;
-}
-
 .todo__button-delete-img {
   height: 2em;
   transform: rotateZ(45deg);
@@ -175,7 +159,6 @@
 
 .todo__item--edit-mode .todo__input {
   display: inline-block;
-  width: 224px;
 }
 
 .todo__item--edit-mode .todo__label {
