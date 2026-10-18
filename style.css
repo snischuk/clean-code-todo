@@ -11,6 +11,21 @@
   text-align: right;
 }
 
+.header__title {
+  font-size: 30px;
+}
+
+.header__title--hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .header__image {
   width: 100%;
 }
@@ -31,6 +46,11 @@
   margin: 0 auto;
 }
 
+.todo__section {
+  display: flex;
+  flex-direction: column;
+}
+
 .todo__label,
 .todo__input {
   width: 56%;
@@ -39,6 +59,7 @@
 }
 
 .todo__new-wrapper {
+  padding: 20px 0;
   display: flex;
 }
 
@@ -99,7 +120,6 @@
 
 .todo__title--new {
   display: block;
-  margin: 0 0 20px;
 }
 
 .todo__input--new {
