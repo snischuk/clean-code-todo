@@ -12,14 +12,14 @@ const createTaskElement = function (taskDescription) {
   const taskDeleteButtonElement = document.createElement('button');
   const taskDeleteButtonImageElement = document.createElement('img');
 
-  taskLabelElement.innerText = taskDescription;
+  taskLabelElement.textContent = taskDescription;
   taskLabelElement.className = 'task';
 
   taskCheckboxElement.type = 'checkbox';
   taskEditInputElement.type = 'text';
   taskEditInputElement.className = 'task';
 
-  taskEditButtonElement.innerText = 'Edit';
+  taskEditButtonElement.textContent = 'Edit';
   taskEditButtonElement.className = 'edit';
 
   taskDeleteButtonElement.className = 'delete';
@@ -56,11 +56,11 @@ const editTask = function () {
   const isEditMode = taskListItemElement.classList.contains('editMode');
 
   if (isEditMode) {
-    taskLabelElement.innerText = taskEditInputElement.value;
-    taskEditButtonElement.innerText = 'Edit';
+    taskLabelElement.textContent = taskEditInputElement.value;
+    taskEditButtonElement.textContent = 'Edit';
   } else {
-    taskEditInputElement.value = taskLabelElement.innerText;
-    taskEditButtonElement.innerText = 'Save';
+    taskEditInputElement.value = taskLabelElement.textContent;
+    taskEditButtonElement.textContent = 'Save';
   }
 
   taskListItemElement.classList.toggle('editMode');
