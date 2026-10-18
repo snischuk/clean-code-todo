@@ -100,10 +100,10 @@ const bindTaskEvents = function (taskListItemElement, checkboxEventHandler) {
   taskCheckboxElement.onchange = checkboxEventHandler;
 };
 
-for (let i = 0; i < incompleteTasksListElement.children.length; i++) {
-  bindTaskEvents(incompleteTasksListElement.children[i], toggleTaskCompletion);
-}
+const taskLists = [incompleteTasksListElement, completedTasksListElement];
 
-for (let i = 0; i < completedTasksListElement.children.length; i++) {
-  bindTaskEvents(completedTasksListElement.children[i], toggleTaskCompletion);
-}
+taskLists.forEach((taskListElement) => {
+  Array.from(taskListElement.children).forEach((taskListItemElement) => {
+    bindTaskEvents(taskListItemElement, toggleTaskCompletion);
+  });
+});
